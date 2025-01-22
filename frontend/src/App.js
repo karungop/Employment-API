@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="container mt-5">
-        <h1 className="text-center mb-4">Welcome to Workday Clone</h1>
+        <h1 className="text-center mb-4">Welcome to Karun Works</h1>
         <p className="text-muted text-center">Easily manage your work shifts and hours!</p>
       </div>
       <div className="container">

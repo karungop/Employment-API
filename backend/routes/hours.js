@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getAllHours, addHours } = require("../controllers/employees");
+const { getAllHours, addHours } = require("../controllers/hours");
 
 // Routes
 router.get("/", getAllHours); // Get all Hours

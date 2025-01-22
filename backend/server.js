@@ -5,6 +5,7 @@ const apiRoutes = require("./routes/APIRoutes"); // Add this line
 
 const employeesRoutes = require("./routes/employees");
 const hoursRoutes = require("./routes/hours");
+const shiftsRoutes = require("./routes/shifts");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use("/api", apiRoutes); // Use API routes under /api path
 app.use("/api/employees", employeesRoutes);
 app.use("/api/hours", hoursRoutes);
+app.use("/api/shifts", shiftsRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");

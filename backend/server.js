@@ -1,7 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const apiRoutes = require("./routes/apiRoutes"); // Add this line
+const apiRoutes = require("./routes/APIRoutes"); // Add this line
+
+const employeesRoutes = require("./routes/employees");
+const hoursRoutes = require("./routes/hours");
 
 const app = express();
 
@@ -11,6 +14,8 @@ app.use(bodyParser.json());
 
 // Use the API routes
 app.use("/api", apiRoutes); // Use API routes under /api path
+app.use("/api/employees", employeesRoutes);
+app.use("/api/hours", hoursRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");

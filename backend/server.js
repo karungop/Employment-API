@@ -16,5 +16,21 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-const PORT = 5000;
+const PORT = 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+const db = require('./models/db'); // Import your database connection
+
+// Test route to verify DB connection
+app.get('/test-db', (req, res) => {
+  const query = 'SELECT 1 + 1 AS result'; // Simple query to test the connection
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error('Database query failed:', err);
+      return res.status(500).send('Database connection failed');
+    }
+    console.log('Database query successful:', results);
+    res.send('Database connected successfully! Result: ' + results[0].result);
+  });
+});

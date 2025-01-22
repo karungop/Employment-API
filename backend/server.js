@@ -21,7 +21,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 const db = require('./models/db'); // Import your database connection
-
+/*
 // Test route to verify DB connection
 app.get('/test-db', (req, res) => {
   const query = 'SELECT 1 + 1 AS result'; // Simple query to test the connection
@@ -34,3 +34,4 @@ app.get('/test-db', (req, res) => {
     res.send('Database connected successfully! Result: ' + results[0].result);
   });
 });
+*/

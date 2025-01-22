@@ -3,6 +3,7 @@ import ClockInOut from './components/ClockInOut';
 import EditHours from './components/EditHours';
 import PickUpShifts from './components/PickUpShifts';
 import Navbar from './components/Navbar';
+import UpcomingShifts from './components/UpcomingShifts'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <h1 className="mt-4">Workday Management</h1>
         <ClockInOut />
         <EditHours />
+        <UpcomingShifts />
         <PickUpShifts />
       </div>
     </div>

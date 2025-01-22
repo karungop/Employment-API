@@ -8,7 +8,7 @@ const ClockInOut = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-10">
       <button 
         className={`btn ${isClockedIn ? 'btn-danger' : 'btn-success'}`} 
         onClick={handleClock}

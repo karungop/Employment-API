@@ -31,4 +31,29 @@ const addShifts = (req, res) => {
   );
 };
 
-module.exports = { getAllShifts, addShifts };
+
+const getShiftsForEmployee = (req, res) => {
+  const { employee_id, shift_start, shift_end } = req.body;
+  if (!employee_id || !shift_start || !shift_end) {
+    return res.status(400).send("All fields (employee_id, shift_start, shift_end) are required.");
+  }
+  const query = `
+  SELECT shifts.id, shifts.start_time, shifts.end_time, 
+  FROM shifts
+  WHERE shifts.employee_id = ?
+`;
+
+  db.query(query, [employeeId], (err, results) => {
+    if (err) {
+      res.status(500).send(err);
+    } else if (results.length === 0) {
+      res.status(404).send("No shifts found for this employee.");
+    } else {
+      res.json(results); // Return the shift data
+    }
+    }
+  );
+
+};
+
+module.exports = { getAllShifts, addShifts, getShiftsForEmployee };
